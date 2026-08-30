@@ -1,0 +1,13 @@
+{
+  "game_id": "dk64",
+  "id": "dk64_skip_intro",
+  "display_name": "DK64 Skip Intro",
+  "description": "Skips the normal DK64 frontend startup chain by queueing the Main Menu through DK64 Recompiled's existing next-map transition state at startup. Compatibility metadata is intentionally set to 0.0.0 so DK64 Recompiled 1.0.1 does not reject the mod before loading.",
+  "short_description": "Queue a safe startup transition to Main Menu.",
+  "version": "1.0.5",
+  "authors": [
+    "ChatGPT / user build"
+  ],
+  "minimum_recomp_version": "0.0.0",
+  "enabled_by_default": true
+}

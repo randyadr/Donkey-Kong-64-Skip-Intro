@@ -1,0 +1,29 @@
+name: Build DK64 Skip Intro
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install LLVM and Python
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang lld llvm python3
+
+      - name: Build
+        run: python3 build.py
+
+      - name: Upload NRM
+        uses: actions/upload-artifact@v4
+        with:
+          name: DK64-Skip-Intro-v1.0.5
+          path: |
+            dist/DK64-Skip-Intro-v1.0.5.nrm
+            dist/DK64-Skip-Intro-v1.0.5.nrm.sha256
